@@ -33,34 +33,13 @@ function Home(props) {
     </main>
   )
 }
-/*
-export function getStaticProps() {
-    const staticDate = new Date();
-    const staticDateString = staticDate.toGMTString();
 
-    return {
-        props: {
-            staticDateString,
-        },
-        revalidate: 10
-    }
-}
-
-*/
-
-
-
-
-export async function getServerSideProps({ req, res }) {
-
+export async function getStaticProps() {
   const resposta = await fetch('http://localhost:3000/api/jogos');
 
   const post = await resposta.json();
 
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
-  )
+
 
   return {
     props:
@@ -68,9 +47,13 @@ export async function getServerSideProps({ req, res }) {
       title: 'My Title',
       jogos: post,
     },
-
+    revalidate: 10
   };
 
+   
 }
+
+
+
 
 export default Home
