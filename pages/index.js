@@ -50,6 +50,8 @@ export async function getStaticProps() {
       title: 'My Title',
       jogos: posts,
     },
+    revalidate: 3600/* apos 10 segundos, a proxima requicição ira atualizar o cache */
+
   };
 
    
