@@ -1,6 +1,6 @@
 import Home from '../screens/Home';
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   /*const dadosDaAPI = await fetch('http://localhost:3000/api/jogos')
   .then((res) => {
     if(res.ok){
