@@ -2,7 +2,7 @@ import { GoogleSpreadsheet } from 'google-spreadsheet'
 
 export default async function (req, res) {
 
-/*
+
     const credsStr = process.env.SHEETS_SECRET_API;
     const creds = JSON.parse(credsStr);
     const doc = new GoogleSpreadsheet(process.env.SHEETS_URL);
@@ -31,11 +31,8 @@ export default async function (req, res) {
         games: jogos,
     })
 
-    */
+    
 
 
-    res.send({
-        title: "teste",
-        games: [],
-    })
+ 
 }
