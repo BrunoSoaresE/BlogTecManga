@@ -47,7 +47,6 @@ export async function getStaticProps() {
       title: 'My Title',
       jogos: post,
     },
-    revalidate: 10
   };
 
    
