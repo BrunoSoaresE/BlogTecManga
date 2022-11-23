@@ -34,18 +34,21 @@ function Home(props) {
   )
 }
 
-export async function getStaticProps() {
+
+export async function loadPosts() {
   const resposta = await fetch('http://localhost:3000/api/jogos');
-
   const post = await resposta.json();
+  return post
+}
 
-
+export async function getStaticProps() {
+  const posts = await loadPosts()
 
   return {
     props:
     {
       title: 'My Title',
-      jogos: post,
+      jogos: posts,
     },
   };
 
