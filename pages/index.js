@@ -35,8 +35,8 @@ function Home(props) {
 }
 
 
-export async function loadPosts() {
-  const resposta = await fetch('http://localhost:3000/api/jogos');
+async function loadPosts() {
+  const resposta = await fetch(process.env.URL_API + 'api/jogos');
   const post = await resposta.json();
   return post
 }
