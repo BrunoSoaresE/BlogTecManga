@@ -1,5 +1,4 @@
 import Home from '../screens/Home';
-import React from 'react';
 
 export async function getServerSideProps({ req, res }) {
   const resposta = await fetch('http://localhost:3000/api/jogos');
