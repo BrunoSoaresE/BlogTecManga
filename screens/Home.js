@@ -1,13 +1,14 @@
 import React from "react";
 
-function Home({ jogos }) {
-
+function Home(props) {
+    console.log("----------");
+console.log(props);
     return (
         <main>
-            <h1>Top jogos - TecManga</h1>
+            <h1>Top jogos - TecManga - {props.jogos.title}</h1>
 
             <ol>
-                {jogos.map((jogo, indice) => {
+                {props.jogos.games.map((jogo, indice) => {
                     const posicao = indice + 1;
 
                     return (

@@ -1,19 +1,12 @@
 import Home from '../screens/Home';
 
 export async function getStaticProps() {
-  /*const dadosDaAPI = await fetch('http://localhost:3000/api/jogos')
-  .then((res) => {
-    if(res.ok){
-      return res.json();
-    }
-  }).then((res) =>{
-    return res
-  })
-  */
+  const res = await fetch('http://localhost:3000/api/jogos');
 
+ const post = await res.json();
   return {
     props: {
-      jogos: []
+      jogos: post
     }
   }
   
