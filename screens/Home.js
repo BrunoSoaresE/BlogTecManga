@@ -1,8 +1,7 @@
 import React from "react";
 
 function Home(props) {
-    console.log("----------");
-console.log(props);
+
     return (
         <main>
             <h1>Top jogos - TecManga - {props.jogos.title}</h1>

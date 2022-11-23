@@ -29,10 +29,5 @@ export default async function (req, res) {
     res.send({
         title: doc.title,
         games: jogos,
-    })
-
-    
-
-
- 
+    }); 
 }
