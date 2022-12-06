@@ -1,0 +1,13 @@
+.ListPost{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.Post {
+
+    border:solid #D76A03 2px;  
+  border-radius: 25px;
+    width: 320px;
+    height: 400px;
+
+  }
