@@ -1,13 +1,138 @@
-.ListPost{
+.ListPost {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  align-items: center;
+  background: linear-gradient(#007bb2, #0d1423);
 }
+
 .Post {
+  position: relative;
+  width: 320px;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  margin: 5px;
+}
 
-    border:solid #D76A03 2px;  
-  border-radius: 25px;
-    width: 320px;
-    height: 400px;
+.Post .Poster {
+  position: relative;
+  overflow: hidden;
+}
 
-  }
+.Post .Poster::before {
+  content: '';
+  position: absolute;
+  bottom: -180px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #1064a6 50%, transparent);
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.Post:hover .Poster::before {
+  bottom: 0px;
+}
+
+.Post .Poster img {
+  width: 100%;
+  transition: 0.5s;
+}
+
+.Post:hover .Poster img {
+  transform: translateY(-50px);
+  filter: blur(5px);
+}
+
+.Post .details {
+  position: absolute;
+  width: 100%;
+  bottom: -145px;
+  z-index: 2;
+  padding: 10px;
+  transition: 0.5s;
+  color: white;
+}
+
+.Post:hover .details {
+  bottom: 0px;
+}
+
+.Post .details .Titulo {
+  max-width: 280px;
+}
+
+.Post .details h3 {
+  font-size: 14px;
+  min-height: 10px;
+}
+
+
+
+.Post .details .rating {
+  position: relative;
+  padding: 5px 0;
+  color: #f7f406;
+  font-size: 1em;
+}
+
+.Post .details .rating span {
+  position: relative;
+  top: -3px;
+  color: white;
+}
+
+
+.Post .details .tags {
+  position: relative;
+  margin-top: 5px;
+}
+
+.Post .details .tags span {
+  margin-left: 5px;
+  padding: 2px 5px;
+  background: #03a8f5;
+  border-radius: 4px;
+}
+
+.Post .details .tags span:nth-child(2) {
+  background: #ff5722;
+}
+
+
+
+
+.Post .details .info {
+  margin-top: 20px;
+}
+
+.Post .details .cast {
+  position: relative;
+}
+
+.Post .details .cast h4 {
+  margin-top: 10px;
+
+}
+.Post .details .cast ul {
+  position: relative;
+  display: flex;
+  margin-top: 10px;
+}
+
+.Post .details .cast ul li {
+  list-style: none;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid #fff ;
+  margin-left: 5px;
+}
+
+.Post .details .cast ul li img {
+  max-width: 100%;
+  height: 100%;
+}

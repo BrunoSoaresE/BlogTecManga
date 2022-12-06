@@ -17,13 +17,13 @@ export default async function (req, res) {
     const rows = await sheet.getRows();
     
 
-    const filmes = rows.map(({ Titulo, Ano,Empresa,Gostaram,Sinopse,Direcao,Genero,Atores,Analise }) => {   
+    const filmes = rows.map(({ Titulo, Ano,Empresa,Gostaram,Sinopse,Direcao,Genero,Atores,Analise,Poster }) => {   
 
         var listAtores = Atores != null ? Atores.split(";") : [];
         var listDirecao = Direcao != null ? Direcao.split(";") : [];
-
+        var listGenero = Genero != null ? Genero.split(";") : [];
         return {
-            Titulo, Ano,Empresa,Gostaram,Sinopse,listDirecao,Genero,listAtores,Analise
+            Titulo, Ano,Empresa,Gostaram,Sinopse,listDirecao,listGenero,listAtores,Analise,Poster
         };
     });
 
