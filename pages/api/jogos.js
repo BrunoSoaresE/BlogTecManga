@@ -17,7 +17,7 @@ export default async function (req, res) {
     const rows = await sheet.getRows();
     
 
-    const filmes = rows.map(({ Titulo, Ano,Empresa,Gostaram,Sinopse,Direcao,Genero,Atores,Analise,Poster }) => {   
+    const filmes = rows?.map(({ Titulo, Ano,Empresa,Gostaram,Sinopse,Direcao,Genero,Atores,Analise,Poster }) => {   
 
         var listAtores = Atores != null ? Atores.split(";") : [];
         var listDirecao = Direcao != null ? Direcao.split(";") : [];
