@@ -7,7 +7,7 @@ function ListPost(props) {
 
   return (
     <ol className={styles.ListPost}>
-      {props.filtered.map((filme, indice) => {
+      {props.filtered && props.filtered.map((filme, indice) => {
 
         var Sinopse = filme.Sinopse.length > 175 ? filme.Sinopse.substring(0,200) + "... Ler mais": filme.Sinopse;
 
@@ -26,7 +26,7 @@ function ListPost(props) {
 
               <h3>
                 Directed by
-                {filme.listDirecao?.map(function (ator) {
+                {filme.listDirecao && filme.listDirecao?.map(function (ator) {
                   return (
                     <span key={ator}>{ator}</span>
                   );
@@ -42,7 +42,7 @@ function ListPost(props) {
               </div>
 
               <div className={styles.tags}>
-                {filme.listGenero?.map(function (genero) {
+                {filme.listGenero && filme.listGenero?.map(function (genero) {
                   return (
                     <span key={genero}>{genero}</span>
                   );
@@ -58,7 +58,7 @@ function ListPost(props) {
 
               <div className={styles.cast}>
                 <ul>
-                  {filme.listAtores?.map(function (ator) {
+                  {filme.listAtores && filme.listAtores?.map(function (ator) {
                     return (
                       <li key={ator}><img src="https://recreio.uol.com.br/media/uploads/animacoes/bob_esponja_chorando_capa.jpg"></img></li>
                     );

@@ -19,9 +19,9 @@ export default async function (req, res) {
 
     const filmes = rows?.map(({ Titulo, Ano,Empresa,Gostaram,Sinopse,Direcao,Genero,Atores,Analise,Poster }) => {   
 
-        var listAtores = Atores != null ? Atores.split(";") : [];
-        var listDirecao = Direcao != null ? Direcao.split(";") : [];
-        var listGenero = Genero != null ? Genero.split(";") : [];
+        var listAtores = Atores ? Atores.split(";") : [];
+        var listDirecao = Direcao  ? Direcao.split(";") : [];
+        var listGenero = Genero ? Genero.split(";") : [];
         return {
             Titulo, Ano,Empresa,Gostaram,Sinopse,listDirecao,listGenero,listAtores,Analise,Poster
         };
