@@ -7,19 +7,29 @@ export default async function (req, res) {
   const feed = await data.json();
 
 
-
-
-  
-      const posts = feed?.data?.map(({ id, caption,media_url,timestamp,media_type,permalink }) => {    
+   var posts = null;
+    if(isValid(feed) && isValid(feed.data)){
+          posts = feed.data.map(({ id, caption,media_url,timestamp,media_type,permalink }) => {    
 
           return {
             id, caption,media_url,timestamp,media_type,permalink 
           };
-      });   
+      });
+    }   
   
       res.send({
           data: posts,
       }); 
   
+
+}
+
+function isValid(valor){
+
+  if(valor === undefined || valor == null){
+    return false;
+  }
+
+  return true;
 
 }

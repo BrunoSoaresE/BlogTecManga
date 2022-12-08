@@ -20,7 +20,7 @@ export default function Home(props) {
     }
   }
 
-  const filtered = searchFilter(props.listPost.data);
+  const filtered = searchFilter(props?.listPost?.data);
 
 
 
@@ -56,7 +56,7 @@ export default function Home(props) {
 
 
       <ol className={styles.ListPost}>
-        {filtered && filtered.map((post, indice) => {
+        {filtered && filtered?.map((post, indice) => {
 
           return (
             <div key={post.id} className={styles.Post} >
@@ -85,7 +85,7 @@ async function loadPosts() {
 }
 
 export async function getStaticProps() {
-  const posts = await loadPosts()
+  const posts = await loadPosts();
 
   return {
     props:
