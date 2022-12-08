@@ -22,7 +22,6 @@ export default function Home(props) {
 
   const filtered = searchFilter(props.listPost.data);
 
-  console.log("teste ---> ", filtered)
 
 
   const handleChange = (e) => {

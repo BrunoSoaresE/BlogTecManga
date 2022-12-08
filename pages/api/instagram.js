@@ -10,7 +10,7 @@ export default async function (req, res) {
 
 
   
-      const posts = feed.data.map(({ id, caption,media_url,timestamp,media_type,permalink }) => {    
+      const posts = feed?.data?.map(({ id, caption,media_url,timestamp,media_type,permalink }) => {    
 
           return {
             id, caption,media_url,timestamp,media_type,permalink 
