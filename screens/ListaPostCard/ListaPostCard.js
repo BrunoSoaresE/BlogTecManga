@@ -28,7 +28,7 @@ function ListPost(props) {
                 Directed by
                 {filme.listDirecao && filme.listDirecao?.map(function (ator) {
                   return (
-                    <span key={ator}>{ator}</span>
+                    <span key={ator}> {ator}.</span>
                   );
                 })}
               </h3>

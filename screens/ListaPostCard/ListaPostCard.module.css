@@ -49,11 +49,12 @@
 .Post .details {
   position: absolute;
   width: 100%;
-  bottom: -145px;
   z-index: 2;
   padding: 10px;
   transition: 0.5s;
+  bottom: -25px;
   color: white;
+
 }
 
 .Post:hover .details {
@@ -106,11 +107,29 @@
 
 .Post .details .info {
   margin-top: 20px;
+  transition: 0.5s;
+  max-height: 0px;
 }
 
 .Post .details .cast {
   position: relative;
+  left: -40px;
+  transition: 0.5s;
+  max-height: 0px;
 }
+
+.Post:hover .details .info {
+  max-height: 400px;
+}
+
+.Post:hover .details .cast {
+  max-height: 50px;
+}
+
+
+
+
+
 
 .Post .details .cast h4 {
   margin-top: 10px;
