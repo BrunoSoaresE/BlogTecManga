@@ -35,3 +35,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .env
+.vs/VSWorkspaceState.json
+.vs/VSWorkspaceState.json
+.vs/BlogTecManga/v17/.suo
+.vs/BlogTecManga/FileContentIndex/db88bf6c-7ff0-4d86-bf50-fc3aa4cc0e14.vsidx
+.vs/BlogTecManga/FileContentIndex/d87aac14-dd70-4e6c-a9f0-616f4716669d.vsidx
+.vs/BlogTecManga/FileContentIndex/a9b3e6fd-884d-4f63-89d5-5db85cf60106.vsidx
+.vs/BlogTecManga/FileContentIndex/85eeb676-4fd6-4420-8e78-24ff7b6e40f1.vsidx
+.vs/BlogTecManga/v17/.suo
+.vs/VSWorkspaceState.json
