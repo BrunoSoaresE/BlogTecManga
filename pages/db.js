@@ -8,6 +8,7 @@ import styles from '../styles/Home.module.css';
 export default function Home() {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
+  
 
   const myFunc = (itens) => {
 
