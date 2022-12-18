@@ -3,10 +3,10 @@ import { useState } from 'react'
 import styles from '../styles/Home.module.css';
 
 
-export default function Home(props) {
+export default function Home(props:any) {
   const [query, setQuery] = useState('');
 
-  const searchFilter = (array) => {
+  const searchFilter = (array:any) => {
     if (query.length <= 1) {
       return array;
     } else {
@@ -28,7 +28,7 @@ export default function Home(props) {
 
 
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     if (e && e.target)
       setQuery(e.target.value)
   }
@@ -56,11 +56,11 @@ export default function Home(props) {
       </Head>
       <h1>Insta Bruno</h1>
 
-      <input value={query.value} onChange={handleChange} type='text' placeholder='Search...' />
+      <input value={query} onChange={handleChange} type='text' placeholder='Search...' />
 
 
       <ol className={styles.ListPost}>
-        {filtered && filtered?.map((post, indice) => {
+        {filtered && filtered?.map((post : any, indice: number) => {
 
           return (
             <div key={post.id} className={styles.Post} >

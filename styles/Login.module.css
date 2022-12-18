@@ -1,0 +1,155 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    margin: auto;
+}
+
+.LoginCard {  
+    position: relative;
+    width: 40vw;
+    margin-top: 25vh;
+    margin-bottom: 35vh;
+    height: 40vh;
+    letter-spacing: .05em;
+    padding: 40px;
+  }
+  
+  .LoginCard h1 {
+    color: #363636;
+    font-weight: 400;
+    line-height: 21px;
+    margin-bottom: 40px;
+  }
+  
+  
+  .LoginCard form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    width: 100%;
+  
+  }
+  
+  .LoginCard div {
+    padding-bottom: 10px;
+  }
+  
+  
+  .LoginCard form input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border: solid #d9d9d9 1px;
+    border-radius: 5px;
+    background: white;
+    outline: none;
+    color: #363636;
+    font-size: 1.2em;
+  }
+  
+  .LoginCard form span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1.2em;
+    color: #363636;
+    transition: 0.5s;
+  }
+  
+  .LoginCard form input:not(:placeholder-shown):invalid~span,
+  .LoginCard form input:valid~span,
+  .LoginCard form input:focus~span {
+    color: #363636;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.85em;
+    padding: 0 10px;
+    background: white;
+    border-left: 1px solid #363636;
+    border-right: 1px solid #363636;
+    letter-spacing: 0.2em;
+  }
+  
+  
+  .LoginCard form input:not(:placeholder-shown):invalid {
+    border: solid #c96464 1px;
+  }
+  .LoginCard form input:not(:placeholder-shown):valid {
+    border: solid #99da8c 1px;
+  }
+  .LoginCard form input:not(:placeholder-shown):invalid~span {
+    border-color:#c96464;
+    color: #c93434;
+  }
+  .LoginCard form input:not(:placeholder-shown):valid~span {
+    border-color: #99da8c;
+    color: #56cf3e;
+  }
+  
+  .LoginCard form input:valid,
+  .LoginCard form input:focus {
+    border: solid #363636 1px;
+  }
+  
+  .LoginCard button {
+    position: relative;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 40px;
+    display: inline-block;
+    padding: 15px 20px;
+    border: 2px solid #363636;
+    background: white;
+    color: #363636;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+  
+  }
+  
+  .LoginCard button:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 12px);
+    background: #fff;
+    transition: 0.4s ease-in-out;
+    transform: scaleY(1);
+  }
+  
+  .LoginCard button:hover:before {
+    transform: scaleY(0);
+  }
+  
+  
+  .LoginCard button:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% - 12px);
+    background: #fff;
+    transition: 0.4s ease-in-out;
+    transform: scaleX(1);
+    transition-delay: 0.4s;
+  }
+  
+  .LoginCard button:hover:after {
+    transform: scaleX(0);
+  }
+  
+  
+  .LoginCard button span {
+    position: relative;
+    z-index: 3;
+    color: #363636;
+  
+  
+  
+  }

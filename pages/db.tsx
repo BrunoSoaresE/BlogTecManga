@@ -1,16 +1,19 @@
-import { useEffect, useState } from 'react';
-
 import { useForm } from 'react-hook-form';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import {useContext,useEffect} from 'react';
+import {AuthContext} from '../src/contexts/AuthContext';
+import { api } from '../src/services/api';
+import {parseCookies} from 'nookies'
+import { getAPIClient } from '../src/services/axios';
 
-
-export default function Home() {
+export default function Home(props:any) {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { user } = useContext(AuthContext);
 
   
 
-  const myFunc = (itens) => {
+  const myFunc = (itens: any) => {
 
 
     var uid = generateUUID();
@@ -22,9 +25,14 @@ export default function Home() {
                         }`
 
 
-    savePosts(novoUsuario);
+    //savePosts(novoUsuario);
 
   }
+
+
+  /*useEffect(() => {
+   api.get('/users')
+  }, [])*/
 
 
   return (
@@ -41,9 +49,9 @@ export default function Home() {
         <br></br>
         <br></br>
         <hr></hr>
-  
+        <p>{props?.nome}</p>
         <div className={styles.newsletter}>
-          <p>ASSINE A NOSSA NEWSLETTER</p>
+          <p>ASSINE A NOSSA NEWSLETTER: <span>{user?.email}</span></p>
           <form onSubmit={handleSubmit(myFunc)}>
             <div>
               <input {...register("Nome")} placeholder=" " required></input>
@@ -102,19 +110,44 @@ export default function Home() {
   }
   
   export async function getStaticProps() {
-    const posts = await loadPosts();
+    //const posts = await loadPosts();
   
     return {
       props:
       {
-        usuarios: posts,
+        nome: 'posts',
       },
       revalidate: 60
     };
   
+  }
+
+  */
+
+  export async function getServerSideProps(ctx: any) {
+
+    const {['blogtecmanga.token']: token}= parseCookies(ctx);
+    if(!token){
+      return{
+        redirect:{
+          destination: '/login',
+          permanet:false
+        }
+      }
+    }
+    const apiClient = getAPIClient(ctx);
+    //await apiClient.get('/users');
+
+    return {
+      props:
+      {
+        nome: 'posts',      }
+    };
   
   }
-  */
+
+
+
   function generateUUID() { // Public Domain/MIT
     var d = new Date().getTime();//Timestamp
     var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now() * 1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
