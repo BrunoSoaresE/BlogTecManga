@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css';
 export default function Home(props:any) {
   const [query, setQuery] = useState('');
 
-  const searchFilter = (array:any) => {
+  const searchFilter = (array:any[]) => {
     if (query.length <= 1) {
       return array;
     } else {
