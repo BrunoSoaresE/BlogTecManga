@@ -4,7 +4,7 @@ import Router from 'next/router'
 
 import { recoverUserInformation, signInRequest } from "../../src/services/auth";
 import { api } from "../../src/services/api";
-import { getAPIClient } from '../src/services/axios';
+import { getAPIClient } from '../services/axios';
 
 
 type User = {
